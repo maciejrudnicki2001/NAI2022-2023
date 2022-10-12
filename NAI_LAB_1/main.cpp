@@ -22,23 +22,19 @@ int main(int argc, char **argv) {
 
     try {
         vector<string> argumenty(argv, argv + argc);
-        string key = argumenty[2];
+        string key = argumenty[1];
 
-        if(argv[1] != string("lab1")){
-            cout<< "Blad 1 -> podaj lab1"<<endl;
-            return 0;
-        }
 
         vector<double> wartosci;
-        for (int i = 3; i < argc; ++i) {
+        for (int i = 2; i < argc; ++i) {
             wartosci.push_back(stod(argumenty[i]));
         }
         mojamapa_t mojamapa = {{key, wartosci}};
         wypisz(mojamapa, formatery[key]);
 
     } catch (...) {
-        if(argc != 5) {
-            cout << "Blad 2-> podaj prawidlowe argumenty" << endl;
+        if(argc != 2) {
+            cout << "Blad 2-> podaj prawidlową ilość argumentów" << endl;
         }else{
             cout <<"Blad 3 -> Podaj prawidlowa funkcje"<<endl;
         }
