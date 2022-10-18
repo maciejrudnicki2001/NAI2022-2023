@@ -1,0 +1,63 @@
+best x1 = 0
+Pomiar numer:0Wykonuje iteracji: 100000
+Czas wykonania: 69ms
+best x2:2.83371e-07
+Pomiar numer:1Wykonuje iteracji: 200000
+Czas wykonania: 132ms
+best x2:-4.54844e-08
+Pomiar numer:2Wykonuje iteracji: 300000
+Czas wykonania: 196ms
+best x2:-1.78285e-08
+Pomiar numer:3Wykonuje iteracji: 400000
+Czas wykonania: 262ms
+best x2:-1.18287e-08
+Pomiar numer:4Wykonuje iteracji: 500000
+Czas wykonania: 368ms
+best x2:1.4808e-08
+Pomiar numer:5Wykonuje iteracji: 600000
+Czas wykonania: 392ms
+best x2:-5.67802e-08
+Pomiar numer:6Wykonuje iteracji: 700000
+Czas wykonania: 451ms
+best x2:4.19801e-10
+Pomiar numer:7Wykonuje iteracji: 800000
+Czas wykonania: 527ms
+best x2:1.61311e-08
+Pomiar numer:8Wykonuje iteracji: 900000
+Czas wykonania: 596ms
+best x2:-9.18662e-10
+Pomiar numer:9Wykonuje iteracji: 1000000
+Czas wykonania: 675ms
+best x2:-1.30945e-08
+Pomiar numer:10Wykonuje iteracji: 1100000
+Czas wykonania: 725ms
+best x2:3.10544e-09
+Pomiar numer:11Wykonuje iteracji: 1200000
+Czas wykonania: 854ms
+best x2:-2.88638e-09
+Pomiar numer:12Wykonuje iteracji: 1300000
+Czas wykonania: 892ms
+best x2:-9.33086e-10
+Pomiar numer:13Wykonuje iteracji: 1400000
+Czas wykonania: 918ms
+best x2:-9.1321e-10
+Pomiar numer:14Wykonuje iteracji: 1500000
+Czas wykonania: 992ms
+best x2:7.66433e-09
+Pomiar numer:15Wykonuje iteracji: 1600000
+Czas wykonania: 1046ms
+best x2:1.0446e-08
+Pomiar numer:16Wykonuje iteracji: 1700000
+Czas wykonania: 1163ms
+best x2:-5.82474e-10
+Pomiar numer:17Wykonuje iteracji: 1800000
+Czas wykonania: 1229ms
+best x2:-8.17199e-10
+Pomiar numer:18Wykonuje iteracji: 1900000
+Czas wykonania: 1284ms
+best x2:2.35704e-09
+Pomiar numer:19Wykonuje iteracji: 2000000
+Czas wykonania: 1312ms
+best x2:3.41252e-09
+
+Process finished with exit code 0
