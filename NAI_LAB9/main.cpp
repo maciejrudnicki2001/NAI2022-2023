@@ -1,5 +1,4 @@
-//Napisz program, który będzie wyłapywał 2 największe obiekty koloru czerwonego
-// i jak zostaną ułożone w jednej poziomej linii (z jakimś marginesem) to między nimi zostaną narysowane 3 kreski
+
 
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
@@ -9,7 +8,7 @@
 using namespace cv;
 using namespace std;
 
-// Write a program that will find the 2 largest red objects and if they are placed in one horizontal line (with some margin) then between them 3 lines will be drawn
+
 
 int main(int argc, char** argv)
 {
@@ -22,7 +21,6 @@ int main(int argc, char** argv)
         Mat frame;
         cap >> frame; // get a new frame from camera
         flip(frame, frame, 1);
-        //find two biggest red objects on frame and connect them with 3 lines
         Mat hsv;
         cvtColor(frame, hsv, COLOR_BGR2HSV);
         Mat mask;
@@ -40,17 +38,20 @@ int main(int argc, char** argv)
         vector<Rect> boundRect(contours.size());
         vector<Point2f>center(contours.size());
         vector<float>radius(contours.size());
+        if (contours.size() == 0 || contours.size() == 1)
+        {
+            imshow("frame", frame);
+            if (waitKey(30) >= 0) break;
+            continue;
+        }
         for (int i = 0; i < contours.size(); i++)
         {
             approxPolyDP(Mat(contours[i]), contours_poly[i], 3, true);
             boundRect[i] = boundingRect(Mat(contours_poly[i]));
             minEnclosingCircle((Mat)contours_poly[i], center[i], radius[i]);
         }
-        //if cant find any still try to find one
-        if (contours.size() == 0 || contours.size() == 1)
-        {
-            continue;
-        }
+
+
         vector<float> areas(contours.size());
         for (int i = 0; i < contours.size(); i++)
         {
@@ -70,15 +71,15 @@ int main(int argc, char** argv)
                 }
             }
         }
-        if (indexes.size() == 2)
+
+
+        if (abs(center[indexes[0]].y - center[indexes[1]].y) < 50)
         {
-            if (abs(center[indexes[0]].y - center[indexes[1]].y) < 50)
-            {
-                line(frame, Point(center[indexes[0]].x, center[indexes[0]].y), Point(center[indexes[1]].x, center[indexes[1]].y), Scalar(0, 0, 255), 3);
-                line(frame, Point(center[indexes[0]].x, center[indexes[0]].y + 10), Point(center[indexes[1]].x, center[indexes[1]].y + 10), Scalar(0, 0, 255), 3);
-                line(frame, Point(center[indexes[0]].x, center[indexes[0]].y - 10), Point(center[indexes[1]].x, center[indexes[1]].y - 10), Scalar(0, 0, 255), 3);
-            }
+            line(frame, Point(center[indexes[0]].x, center[indexes[0]].y), Point(center[indexes[1]].x, center[indexes[1]].y), Scalar(0, 0, 255), 3);
+            line(frame, Point(center[indexes[0]].x, center[indexes[0]].y + 10), Point(center[indexes[1]].x, center[indexes[1]].y + 10), Scalar(0, 0, 255), 3);
+            line(frame, Point(center[indexes[0]].x, center[indexes[0]].y - 10), Point(center[indexes[1]].x, center[indexes[1]].y - 10), Scalar(0, 0, 255), 3);
         }
+
 
 
 
@@ -86,7 +87,7 @@ int main(int argc, char** argv)
         imshow("frame", frame);
         if(waitKey(30) >= 0) break;
     }
-    // the camera will be deinitialized automatically in VideoCapture destructor
+
     return 0;
 }
 
