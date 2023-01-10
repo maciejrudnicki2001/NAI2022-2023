@@ -1,0 +1,3 @@
+/home/uwu/CLionProjects/myArucoFIrstProject/cmake-build-debug/CMakeFiles/myArucoFIrstProject.dir
+/home/uwu/CLionProjects/myArucoFIrstProject/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/uwu/CLionProjects/myArucoFIrstProject/cmake-build-debug/CMakeFiles/rebuild_cache.dir
